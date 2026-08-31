@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Tjimka.github.io/cnch-website/sitemap.xml
