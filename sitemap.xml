@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tjimka.github.io/cnch-website/cookies/</loc>
+    <lastmod>2026-09-01T10:52:21.574Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://tjimka.github.io/cnch-website/contact/</loc>
     <lastmod>2026-09-01T10:52:12.390Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -13,11 +18,6 @@
   <url>
     <loc>https://tjimka.github.io/cnch-website/</loc>
     <lastmod>2026-09-01T10:52:03.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/cookies/</loc>
-    <lastmod>2026-09-01T10:51:57.249Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
