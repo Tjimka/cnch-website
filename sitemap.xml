@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tjimka.github.io/cnch-website/contact/</loc>
-    <lastmod>2026-08-31T19:00:51.845Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/bestuur/</loc>
-    <lastmod>2026-08-31T19:00:50.791Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/over-ons/</loc>
-    <lastmod>2026-08-31T19:00:46.140Z</lastmod>
+    <loc>https://tjimka.github.io/cnch-website/</loc>
+    <lastmod>2026-09-01T10:29:12.238Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://tjimka.github.io/cnch-website/gasten/</loc>
-    <lastmod>2026-08-31T19:00:43.290Z</lastmod>
+    <lastmod>2026-09-01T10:28:10.975Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/contact/</loc>
+    <lastmod>2026-09-01T10:26:58.294Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/over-ons/</loc>
+    <lastmod>2026-09-01T10:26:29.447Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/bestuur/</loc>
+    <lastmod>2026-09-01T10:25:43.828Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://tjimka.github.io/cnch-website/leden/</loc>
-    <lastmod>2026-08-31T19:00:38.548Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/</loc>
-    <lastmod>2026-08-31T18:53:52.611Z</lastmod>
+    <lastmod>2026-09-01T10:25:05.915Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
