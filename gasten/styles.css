@@ -121,8 +121,8 @@ footer{background:var(--white);border-top:1px solid var(--border);}
 .header-actions{display:flex;gap:10px;align-items:center;flex-shrink:0;}
 .nav-mobile-only{display:none;}
 @media (max-width:860px){
-  .header-inner{flex-wrap:nowrap;padding:14px 16px;position:relative;gap:12px;}
-  .logo{height:48px;width:auto;margin:0;}
+  .header-inner{flex-wrap:nowrap;padding:12px 16px;position:relative;gap:12px;}
+  .logo{height:64px;width:auto;margin:0;}
   .nav-toggle{display:flex;order:3;margin-left:auto;}
   .header-actions{display:none;}
   .site-nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);box-shadow:0 14px 28px rgba(46,92,153,0.14);flex-direction:column;gap:2px;padding:12px;width:100%;z-index:70;}
