@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tjimka.github.io/cnch-website/privacy/</loc>
-    <lastmod>2026-09-01T10:49:49.346Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/over-ons/</loc>
-    <lastmod>2026-09-01T10:49:45.246Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/leden/</loc>
-    <lastmod>2026-09-01T10:49:40.777Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tjimka.github.io/cnch-website/gasten/</loc>
-    <lastmod>2026-09-01T10:49:36.570Z</lastmod>
+    <loc>https://tjimka.github.io/cnch-website/</loc>
+    <lastmod>2026-09-01T10:52:03.711Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://tjimka.github.io/cnch-website/cookies/</loc>
-    <lastmod>2026-09-01T10:49:31.274Z</lastmod>
+    <lastmod>2026-09-01T10:51:57.249Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/privacy/</loc>
+    <lastmod>2026-09-01T10:51:54.915Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/gasten/</loc>
+    <lastmod>2026-09-01T10:51:52.543Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://tjimka.github.io/cnch-website/contact/</loc>
-    <lastmod>2026-09-01T10:49:27.694Z</lastmod>
+    <lastmod>2026-09-01T10:51:50.248Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://tjimka.github.io/cnch-website/bestuur/</loc>
-    <lastmod>2026-09-01T10:49:23.059Z</lastmod>
+    <lastmod>2026-09-01T10:51:47.820Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://tjimka.github.io/cnch-website/</loc>
-    <lastmod>2026-09-01T10:49:18.175Z</lastmod>
+    <loc>https://tjimka.github.io/cnch-website/over-ons/</loc>
+    <lastmod>2026-09-01T10:51:45.430Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tjimka.github.io/cnch-website/leden/</loc>
+    <lastmod>2026-09-01T10:51:41.948Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
