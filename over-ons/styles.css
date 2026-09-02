@@ -97,3 +97,10 @@ footer{background:var(--white);border-top:1px solid var(--border);}
   .mosaic-cell:nth-child(4){grid-column:1;grid-row:4;}
   .mosaic-cell:nth-child(5){grid-column:1;grid-row:5;}
 }
+
+/* Scroll-reveal (self-contained, geen externe library nodig) */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
