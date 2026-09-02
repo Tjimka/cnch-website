@@ -86,6 +86,7 @@
       return;
     }
     members.forEach(function(m){ grid.appendChild(renderCard(m)); });
+    if(window.__cnchInitReveal) window.__cnchInitReveal();
   }
 
   function loadMembers(){
@@ -147,6 +148,30 @@
     nav.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
+})();
+
+(function(){
+  /* Scroll-reveal zonder externe library (GSAP wordt geblokkeerd in de Stroomlijn-omgeving,
+     dit geeft hetzelfde soort polish met pure CSS + IntersectionObserver). */
+  function reveal(){
+    var els=document.querySelectorAll('.reveal:not(.is-visible)');
+    if(!els.length)return;
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+  window.__cnchInitReveal = reveal;
+  reveal();
 })();
 
 (function(){
