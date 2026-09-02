@@ -55,6 +55,13 @@ footer{background:var(--white);border-top:1px solid var(--border);}
 .footer-inner strong{color:var(--text);}
 .footer-social a{color:var(--cnch-blue);text-decoration:none;font-weight:700;margin-right:14px;}
 
+/* Scroll-reveal (self-contained, geen externe library nodig) */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
 /* Hamburgermenu voor mobiel */
 .nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;border:1px solid var(--border);border-radius:10px;background:var(--white);cursor:pointer;padding:0;flex-shrink:0;}
 .nav-toggle span{display:block;width:20px;height:2px;background:var(--cnch-blue);border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
