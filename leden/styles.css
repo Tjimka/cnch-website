@@ -98,3 +98,10 @@ footer{background:var(--white);border-top:1px solid var(--border);margin-top:8px
   .card-portrait-wrap{top:56px;}
   .footer-inner{text-align:center;justify-content:center;}
 }
+
+/* Scroll-reveal (self-contained, geen externe library nodig) */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
