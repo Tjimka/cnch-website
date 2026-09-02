@@ -1,5 +1,5 @@
 /* LET OP: de GitHub-sync bundelt alle inline scripts van deze pagina naar script.js.
-   Daarom staat de complete ledenlader + carousel hier in de pagina. Nooit vervangen door een los stukje. */
+   Daarom staat de complete ledenlader hier in de pagina. Nooit vervangen door een los stukje. */
 (function(){
   var SHEET_URL = "https://app.stroomlijn.nu/api/public/landing-pages/6272/sheet-data";
 
@@ -23,8 +23,6 @@
   }
 
   var allMembers = [];
-  var currentList = [];
-  var activeIndex = 0;
 
   function renderCard(m){
     var card = document.createElement("div");
@@ -78,80 +76,21 @@
     return card;
   }
 
-  /* --- Tilted carousel: pure CSS 3D + vanilla JS, geen externe library --- */
-  function updateCarousel(){
-    var track = document.getElementById("tiltTrack");
-    var items = track.querySelectorAll(".tilt-card");
-    var prevBtn = document.getElementById("tiltPrev");
-    var nextBtn = document.getElementById("tiltNext");
-    var posEl = document.getElementById("tiltPosition");
-    if(!items.length) return;
-
-    if(activeIndex < 0) activeIndex = 0;
-    if(activeIndex > items.length - 1) activeIndex = items.length - 1;
-
-    var wrapWidth = document.getElementById("tiltWrap").clientWidth;
-    var itemW = items[0].offsetWidth;
-    var gap = 16;
-    var centerOffset = wrapWidth / 2 - itemW / 2;
-    var x = centerOffset - activeIndex * (itemW + gap);
-    track.style.transform = "translateX(" + x + "px)";
-
-    items.forEach(function(el, i){
-      var diff = i - activeIndex;
-      var abs = Math.abs(diff);
-      el.classList.toggle("is-active", diff === 0);
-      if(abs > 6){
-        el.style.visibility = "hidden";
-      } else {
-        el.style.visibility = "visible";
-      }
-      var rotate = Math.max(-58, Math.min(58, diff * 42));
-      var scale = diff === 0 ? 1 : Math.max(0.7, 1 - abs * 0.11);
-      var opacity = diff === 0 ? 1 : Math.max(0.22, 1 - abs * 0.26);
-      el.style.transform = "rotateY(" + rotate + "deg) scale(" + scale + ")";
-      el.style.opacity = opacity;
-      el.style.zIndex = 200 - abs;
-    });
-
-    if(prevBtn) prevBtn.disabled = activeIndex === 0;
-    if(nextBtn) nextBtn.disabled = activeIndex === items.length - 1;
-    if(posEl) posEl.textContent = (activeIndex + 1) + " / " + items.length;
-  }
-
-  function goTo(i){
-    activeIndex = i;
-    updateCarousel();
-  }
-
   function renderGrid(members){
-    currentList = members;
-    activeIndex = 0;
-    var track = document.getElementById("tiltTrack");
-    var controls = document.getElementById("tiltControls");
+    var grid = document.getElementById("grid");
     var count = document.getElementById("count");
     count.textContent = members.length + (members.length === 1 ? " lid" : " leden");
-    track.innerHTML = "";
+    grid.innerHTML = "";
     if(members.length === 0){
-      track.innerHTML = '<div class="empty">Geen leden gevonden.</div>';
-      controls.style.display = "none";
+      grid.innerHTML = '<div class="empty">Geen leden gevonden.</div>';
       return;
     }
-    members.forEach(function(m, i){
-      var wrap = document.createElement("div");
-      wrap.className = "tilt-card";
-      wrap.dataset.index = i;
-      wrap.appendChild(renderCard(m));
-      wrap.addEventListener("click", function(){ goTo(i); });
-      track.appendChild(wrap);
-    });
-    controls.style.display = "flex";
+    members.forEach(function(m){ grid.appendChild(renderCard(m)); });
     if(window.__cnchInitReveal) window.__cnchInitReveal();
-    requestAnimationFrame(updateCarousel);
   }
 
   function loadMembers(){
-    var track = document.getElementById("tiltTrack");
+    var grid = document.getElementById("grid");
     fetch(SHEET_URL, {cache:"no-store"})
       .then(function(resp){ if(!resp.ok) throw new Error("HTTP " + resp.status); return resp.json(); })
       .then(function(data){
@@ -170,8 +109,7 @@
         renderGrid(allMembers);
       })
       .catch(function(err){
-        track.innerHTML = '<div class="error">Kon de ledenlijst niet laden. (' + esc(err.message) + ')</div>';
-        document.getElementById("tiltControls").style.display = "none";
+        grid.innerHTML = '<div class="error">Kon de ledenlijst niet laden. (' + esc(err.message) + ')</div>';
       });
   }
 
@@ -186,31 +124,6 @@
       renderGrid(filtered);
     });
   }
-
-  document.getElementById("tiltPrev").addEventListener("click", function(){ goTo(activeIndex - 1); });
-  document.getElementById("tiltNext").addEventListener("click", function(){ goTo(activeIndex + 1); });
-
-  var tiltWrap = document.getElementById("tiltWrap");
-  tiltWrap.addEventListener("keydown", function(e){
-    if(e.key === "ArrowLeft"){ e.preventDefault(); goTo(activeIndex - 1); }
-    if(e.key === "ArrowRight"){ e.preventDefault(); goTo(activeIndex + 1); }
-  });
-
-  var touchStartX = null;
-  tiltWrap.addEventListener("touchstart", function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
-  tiltWrap.addEventListener("touchend", function(e){
-    if(touchStartX === null) return;
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    if(dx > 40) goTo(activeIndex - 1);
-    else if(dx < -40) goTo(activeIndex + 1);
-    touchStartX = null;
-  }, {passive:true});
-
-  var resizeTimer = null;
-  window.addEventListener("resize", function(){
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(updateCarousel, 120);
-  });
 
   loadMembers();
 })();
